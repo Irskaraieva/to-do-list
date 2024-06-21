@@ -121,10 +121,10 @@ function renderNote(newTask) {
             class="form-check-input  form-check-input-hover"
             type="checkbox"
             value=""
-            id="flexCheckDefault"
+            id="flexCheck${newTask.id}"
             ${ifCheck}
             />
-            <label class="${cssClass}" for="flexCheckDefault">
+            <label class="${cssClass}" for="flexCheck${newTask.id}">
             ${newTask.text}
             </label>
             <i class="fa-solid position-absolute top-50 end-0 translate-middle delete"> &#10007;</i>
