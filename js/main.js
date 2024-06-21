@@ -112,11 +112,11 @@ function saveToLocalStorage() {
 
 function renderNote(newTask) {
 
-    const cssClass = newTask.done ? 'form-check-label opacity-75 fw-lighter fst-italic' : 'form-check-label';
+    const cssClass = newTask.done ? 'form-check-label w-75 word-break opacity-100 fw-lighter fst-italic text-wrap' : 'form-check-label word-break text-wrap w-100';
     const ifCheck = newTask.done ? 'checked' : '';
 
     const noteHTML = `
-        <div id='${newTask.id}' class="form-check position-relative rounded-1 note">
+        <div id='${newTask.id}' class="form-check overflow-hidden position-relative rounded-1 note">
             <input
             class="form-check-input  form-check-input-hover"
             type="checkbox"

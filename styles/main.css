@@ -42,6 +42,11 @@ h1 {
     cursor: pointer;
 }
 
+.word-break {
+    word-break: break-all;
+    white-space: normal;
+  }
+
 .note {
     padding-right: 35px;
     margin-bottom: 5px;
@@ -76,7 +81,6 @@ h1 {
     color: rgb(148, 28, 12);
 
 }
-
 
 .done {
     align-items: center;
