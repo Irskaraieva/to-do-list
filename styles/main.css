@@ -1,0 +1,139 @@
+body {
+    background-color: rgb(247, 247, 250);
+    font-family: 'Source Serif Pro';
+}
+h1 {
+    align-items: center;
+    text-align: center;
+    color: rgb(59, 107, 109);
+    font-weight: 400;
+}
+.main-container {
+    height: auto;
+    min-height: 250px;
+    padding: 10px 20px; 
+    box-shadow: 0px 0px 4px 1px rgba(168, 167, 167, 0.5);
+-webkit-box-shadow: 0px 0px 4px 1px rgba(189, 186, 186, 0.5);
+-moz-box-shadow: 0px 1px 4px 1px rgba(160, 158, 158, 0.5);
+}
+
+.mob-width    {
+    width: 50%;
+}
+
+.trash-container {
+    height: auto;
+    min-height: 200px;
+    padding: 20px 10px;
+ 
+    
+}
+
+.delete {
+    transition: .3s;
+}
+
+.delete:hover {
+    opacity: .7;
+    cursor: pointer;
+}
+
+.form-check-input-hover:hover {
+    cursor: pointer;
+}
+
+.note {
+    padding-right: 35px;
+    margin-bottom: 5px;
+    animation-name: hide;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    transition: .2s;
+    line-height: 1.6rem;
+}
+
+.note:hover {
+    background-color: rgb(232, 237, 241); 
+    transition: .2s;
+}
+
+.note-img {
+    align-items: center;
+    text-align: center;
+    display: block;
+}
+
+.tasks-list {
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-family: inherit;
+    font-style: italic;
+    font-weight: 400;   
+    color: rgb(148, 28, 12);
+
+}
+
+
+.done {
+    align-items: center;
+    text-align: center;
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 2rem;
+    font-style: italic;
+    color: rgb(8, 128, 4);
+}
+
+.appear {
+    animation-name: appear;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;        
+        margin-bottom: 5px;
+    }
+
+    75% {
+        opacity: 0;
+        
+        margin-bottom: 5px;
+    }
+
+    100% {
+        opacity: 0;
+        min-height: 0px;
+        margin-bottom: 0px;
+        padding: 0;
+        line-height: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: .6;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@media (width < 768px) {
+    .mob-width    {
+        width: 100%;
+    }
+}
