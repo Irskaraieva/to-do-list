@@ -90,10 +90,12 @@ function ifDone(event) {
         noteContent.classList.toggle('opacity-75');
         noteContent.classList.toggle('fw-lighter');
         noteContent.classList.toggle('fst-italic');
+        noteContent.classList.toggle('strikethrough');
 
         if (noteContent.classList.contains('opacity-75') &&
             noteContent.classList.contains('fw-lighter') &&
-            noteContent.classList.contains('fst-italic')
+            noteContent.classList.contains('fst-italic') &&
+            noteContent.classList.contains('strikethrough')
         ) {
             trash.appendChild(parent);
         } else {
