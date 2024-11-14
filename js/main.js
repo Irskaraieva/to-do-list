@@ -84,23 +84,12 @@ function ifDone(event) {
         const task = tasksList.find((e) => e.id === id);
         task.done = !task.done;
 
-        parent.classList.add('appear');
-        parent.style.animationPlayState = 'running';
-
-        noteContent.classList.toggle('opacity-75');
-        noteContent.classList.toggle('fw-lighter');
-        noteContent.classList.toggle('fst-italic');
-        noteContent.classList.toggle('strikethrough');
-
-        if (noteContent.classList.contains('opacity-75') &&
-            noteContent.classList.contains('fw-lighter') &&
-            noteContent.classList.contains('fst-italic') &&
-            noteContent.classList.contains('strikethrough')
-        ) {
+        if (task.done) {
+            noteContent.classList.add('opacity-75', 'fw-lighter', 'fst-italic', 'strikethrough');
             trash.appendChild(parent);
         } else {
+            noteContent.classList.remove('opacity-75', 'fw-lighter', 'fst-italic', 'strikethrough');
             mainContainer.appendChild(parent);
-
         }
 
         saveToLocalStorage();
@@ -114,13 +103,15 @@ function saveToLocalStorage() {
 
 function renderNote(newTask) {
 
-    const cssClass = newTask.done ? 'form-check-label w-75 word-break opacity-100 fw-lighter fst-italic text-wrap' : 'form-check-label word-break text-wrap w-100';
+    const cssClass = newTask.done 
+    ? 'form-check-label ms-3 w-75 word-break opacity-100 fw-lighter fst-italic text-wrap strikethrough' 
+    : 'form-check-label ms-3 word-break text-wrap w-100';
     const ifCheck = newTask.done ? 'checked' : '';
 
     const noteHTML = `
-        <div id='${newTask.id}' class="form-check overflow-hidden position-relative rounded-1 note">
+        <div id='${newTask.id}' class="form-check overflow-hidden position-relative rounded-1 note d-flex">
             <input
-            class="form-check-input  form-check-input-hover"
+            class="form-check-input ms-1 form-check-input-hover "
             type="checkbox"
             value=""
             id="flexCheck${newTask.id}"
